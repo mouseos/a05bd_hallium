@@ -30,7 +30,8 @@ jobs:
 
     - name: Download repo script
       run: |
-        sudo curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
+        curl https://storage.googleapis.com/git-repo-downloads/repo > repo
+        sudo mv repo /usr/bin/repo
         sudo chmod a+rx /usr/bin/repo
 
     - name: Initialize Halium source tree
