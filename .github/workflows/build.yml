@@ -28,16 +28,10 @@ jobs:
           schedtool liblz4-tool bc lzop imagemagick libncurses5 rsync \
           python-is-python3
 
-    - name: Create bin directory and update PATH
-      run: |
-        mkdir -p ~/bin
-        echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
-        source ~/.bashrc
-
     - name: Download repo script
       run: |
-        curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-        chmod a+rx ~/bin/repo
+        sudo curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
+        sudo chmod a+rx /usr/bin/repo
 
     - name: Initialize Halium source tree
       run: |
